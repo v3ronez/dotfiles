@@ -115,6 +115,7 @@ vim.keymap.set({ 'n', 'v' }, '<TAB>', '<cmd>b#<CR>')
 
 -- LSP SIGNATURE
 -- vim.keymap.set({ 'i', 'n' }, '<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { noremap = true, silent = true })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 vim.keymap.set('n', '<leader>x', ':bd<CR>', { desc = 'Close current buffer' })
