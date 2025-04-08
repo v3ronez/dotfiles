@@ -102,12 +102,7 @@ fi
 
 ## aliases
 alias :q="exit"
-alias pdc="php bin/doctrine.php"
 alias vim="nvim"
-alias dnb="dotnet build"
-alias dnr="dotnet run bin"
-alias dne="dnb && clear && dnr"
-alias docm="php vendor/bin/doctrine-migrations "
 alias a="php artisan"
 alias pp="pnpm"
 alias ci="composer install"
@@ -117,7 +112,7 @@ alias bs="brew services"
 alias bstart="brew services start"
 alias bstop="brew services stop"
 alias gs="git status"
-alias ocaml='rlwrap ocaml'
+
 ## end aliases
 
 #PATH VSCODE
@@ -182,7 +177,4 @@ function gpa() {
   git push origin "$current_branch" -q
 }
 #end functions
-
-
-
 
