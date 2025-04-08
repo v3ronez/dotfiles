@@ -7,7 +7,6 @@ sketchybar --add item battery right \
 	update_freq=60 \
 	icon.color="$COLOR" \
 	icon.padding_left=10 \
-	label.padding_right=10 \
 	label.color="$COLOR" \
 	background.height=26 \
 	background.corner_radius="$CORNER_RADIUS" \
