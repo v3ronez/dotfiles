@@ -26,8 +26,7 @@ for sid in $(aerospace list-workspaces --all); do
 done
 
 sketchybar   --add item       separator left                          \
-             --set separator  icon=                                  \
-                              icon.font="Hack Nerd Font:Regular:16.0" \
+             --set separator  icon.font="Hack Nerd Font:Regular:16.0" \
                               background.padding_left=15              \
                               background.padding_right=15             \
                               label.drawing=off                       \

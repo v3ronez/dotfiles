@@ -9,7 +9,7 @@ for sid in $(aerospace list-workspaces --all); do
         background.corner_radius=5 \
         background.height=20 \
         background.drawing=off \
-        label.font.size=14.0 \
+        label.font.size=13.0 \
         label="$sid" \
         click_script="aerospace workspace $sid" \
         script="$HOME/.config/sketchybar/plugins/aerospacer.sh $sid"
