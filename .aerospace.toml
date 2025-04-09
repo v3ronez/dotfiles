@@ -165,3 +165,16 @@ run = 'layout floating'
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+
+[workspace-to-monitor-force-assignment]
+
+    1 = 'main'
+
+    2 = 'main'
+
+    3 = 'main'
+
+    4 = ['secondary', 'main']
+
+    5 = ['secondary', 'main']
