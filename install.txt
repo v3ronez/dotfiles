@@ -1,4 +1,6 @@
 brew install valet
 brew install fzf
 brew install ripgrep
+brew install borders
+brew install sketchybar
 composer global require laravel/installer
