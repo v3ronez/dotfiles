@@ -7,20 +7,21 @@ ITEM_DIR="$HOME/.config/sketchybar/items" # Directory where the items are config
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins" # Directory where all the plugin scripts are stored
 
 LABEL_FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-# FONT="FiraCode Nerd Font:Regular:15.0" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-FONT="Hack Nerd Font:Bold:17.0" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+FONT="FiraCode Nerd Font:Bold:16.0" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 SPACE_CLICK_SCRIPT="yabai -m space --focus \$SID 2>/dev/null" # The script that is run for clicking on space components
 
 PADDINGS=2 # All paddings use this value (icon, label, background)
 
 POPUP_BORDER_WIDTH=1
 POPUP_CORNER_RADIUS=11
-
+HELPER="$HOME/.config/sketchybar/helper"
+killall helper
+(cd $CONFIG_DIR/helper && make)
+$CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
 SHADOW=on
 
 # Setting up the general bar appearance and default values
-# # y_offset=8                                       
-sketchybar --bar     height=25                                         \
+sketchybar --bar     height=26                                         \
                      color=$BAR_COLOR                                  \
                      shadow=$SHADOW                                    \
                      position=top                                      \
@@ -32,14 +33,14 @@ sketchybar --bar     height=25                                         \
                      icon.color=$ICON_COLOR                            \
                      icon.padding_left=$PADDINGS                       \
                      icon.padding_right=$PADDINGS                      \
-                     label.font="$LABEL_FONT:Semibold:14.0"                  \
+                     label.font="$LABEL_FONT:Semibold:14.0"            \
                      label.color=$LABEL_COLOR                          \
                      label.padding_left=$PADDINGS                      \
                      label.padding_right=$PADDINGS                     \
                      background.padding_right=$PADDINGS                \
                      background.padding_left=$PADDINGS                 \
-                     popup.background.border_width=2                   \
-                     popup.background.corner_radius=11                 \
+                     popup.background.border_width=0                   \
+                     popup.background.corner_radius=0                  \
                      popup.background.border_color=$POPUP_BORDER_COLOR \
                      popup.background.color=$POPUP_BACKGROUND_COLOR    \
                      popup.background.shadow.drawing=$SHADOW
@@ -54,6 +55,7 @@ source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/ram.sh"
 ############## FINALIZING THE SETUP ##############
 sketchybar --update
 
