@@ -89,6 +89,11 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-name-regex-substring = 'Passwords'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Pages'
+run = 'layout floating'
+
 # default floating
 
 # 'main' binding mode declaration
