@@ -8,7 +8,11 @@ for sid in $(aerospace list-workspaces --all); do
         background.color=0x44ffffff \
         background.height=20 \
         background.drawing=off \
-        label.font.size=13.0 \
+        background.padding_left=5\
+        background.padding_right=5\
+        label.padding_left=$PADDING             \
+        label.padding_right=6             \
+        label.font.size=14.0 \
         label="$sid" \
         click_script="aerospace workspace $sid" \
         script="$PLUGIN_DIR/aerospacer.sh $sid"

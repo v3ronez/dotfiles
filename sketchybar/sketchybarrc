@@ -47,7 +47,8 @@ sketchybar --bar     height=26                                         \
 
 # Left
 source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/spaces.sh"
+# source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/aerospace.sh"
 # Center
 
 # Right
