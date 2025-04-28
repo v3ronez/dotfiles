@@ -110,6 +110,7 @@ alias cu="composer update"
 alias bu="brew update && brew upgrade"
 alias bs="brew services"
 alias bstart="brew services start"
+alias bsre="brew services restart"
 alias bstop="brew services stop"
 alias gs="git status"
 
