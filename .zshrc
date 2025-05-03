@@ -113,6 +113,7 @@ alias bstart="brew services start"
 alias bsre="brew services restart"
 alias bstop="brew services stop"
 alias gs="git status"
+alias takeout="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --add-host=host.docker.internal:host-gateway -it tighten/takeout:latest"
 
 ## end aliases
 

@@ -32,7 +32,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 400
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -94,12 +94,85 @@ if.app-name-regex-substring = 'discord'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Passwords'
+if.app-name-regex-substring = 'passwords'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Pages'
+if.app-name-regex-substring = 'pages'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'kap'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'cap'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'mail'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'quicktime'
+run = 'layout floating'
+
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'safari'
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'arc'
+# run = 'layout floating'
+#
+[[on-window-detected]]
+if.app-name-regex-substring = 'orbstack'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'pgadmin'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'dbeaver'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'calendar'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'calculator'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'books'
+run = 'layout floating'
+
+# auto move to workspace
+[[on-window-detected]]
+    if.app-id = 'com.apple.Safari'
+    run = 'move-node-to-workspace 1' 
+
+[[on-window-detected]]
+    if.app-id = 'company.thebrowser.Browser'
+    run = 'move-node-to-workspace 1' 
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome'
+    run = 'move-node-to-workspace 1' 
+
+[[on-window-detected]]
+    if.app-id = 'net.kovidgoyal.kitty'
+    run = 'move-node-to-workspace 2' 
+
+[[on-window-detected]]
+    if.app-id = 'com.microsoft.VSCode'
+    run = 'move-node-to-workspace 2' 
+
+[[on-window-detected]]
+    if.app-id = 'com.insomnia.app'
+    run = 'move-node-to-workspace 3' 
 
 # default floating
 
@@ -108,7 +181,6 @@ run = 'layout floating'
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
-
     alt-m = 'fullscreen'
     alt-f = 'layout floating tiling'
 
@@ -138,6 +210,9 @@ run = 'layout floating'
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
+    alt-8 = 'workspace 8'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -145,6 +220,9 @@ run = 'layout floating'
     alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
     alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
     alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+    alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+    alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
+    alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -156,11 +234,12 @@ run = 'layout floating'
 
     #Apps 
     alt-a = 'exec-and-forget open -a /Applications/Arc.app'
+    alt-s = 'exec-and-forget open -a /Applications/Safari.app'
     alt-t = 'exec-and-forget open -a /Applications/Kitty.app'
     alt-d = 'exec-and-forget open -a /Applications/Discord.app'
 
 # 'service' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
@@ -179,14 +258,20 @@ run = 'layout floating'
     shift-down = ['volume set 0', 'mode main']
 
 
-[workspace-to-monitor-force-assignment]
-
-    1 = 'main'
-
-    2 = 'main'
-
-    3 = 'main'
-
-    4 = ['secondary', 'main']
-
-    5 = ['secondary', 'main']
+# [workspace-to-monitor-force-assignment]
+#
+#     1 = 'main'
+#
+#     2 = 'main'
+#
+#     3 = 'main'
+#
+#     4 = 'main'
+#
+#     5 = ['secondary', 'main']
+#
+#     6 = ['secondary', 'main']
+#
+#     7 = ['secondary', 'main']
+#
+#     8 = ['secondary', 'main']
