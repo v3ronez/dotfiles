@@ -107,6 +107,8 @@ alias a="php artisan"
 alias pp="pnpm"
 alias ci="composer install"
 alias cu="composer update"
+alias crd="composer run dev"
+alias crb="composer run build"
 alias bu="brew update && brew upgrade"
 alias bs="brew services"
 alias bstart="brew services start"
@@ -144,7 +146,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 #git
 function gpf() {
-  git add -p . 
+  git add --all -p 
   mensagem=$(IFS=' '; echo "$*")
   if [ -z "$mensagem" ]; then
     mensagem="wip"
@@ -156,7 +158,7 @@ function gpf() {
 }
 
 function gp() {
-  git add -p .
+  git add --all -p 
   mensagem=$(IFS=' '; echo "$*")
   if [ -z "$mensagem" ]; then
     mensagem="wip"
@@ -168,7 +170,7 @@ function gp() {
 }
 
 function gpa() {
-  git add .
+  git add --all
   mensagem=$(IFS=' '; echo "$*")
   if [ -z "$mensagem" ]; then
     mensagem="wip"

@@ -101,41 +101,21 @@ run = 'layout floating'
 # if.app-name-regex-substring = 'pages'
 # run = 'layout floating'
 
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'kap'
-# run = 'layout floating'
+[[on-window-detected]]
+if.app-name-regex-substring = 'kap'
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'cap'
 run = 'layout floating'
 
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'mail'
-# run = 'layout floating'
-#
 [[on-window-detected]]
 if.app-name-regex-substring = 'quicktime'
 run = 'layout floating'
 
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'safari'
-# run = 'layout floating'
-#
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'arc'
-# run = 'layout floating'
-#
 [[on-window-detected]]
 if.app-name-regex-substring = 'orbstack'
 run = 'layout floating'
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'pgadmin'
-# run = 'layout floating'
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'dbeaver'
-# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'calendar'
@@ -152,6 +132,10 @@ run = 'layout floating'
 # auto move to workspace
 [[on-window-detected]]
     if.app-id = 'com.apple.Safari'
+    run = 'move-node-to-workspace 1' 
+
+[[on-window-detected]]
+    if.app-id = 'net.whatsapp.WhatsApp '
     run = 'move-node-to-workspace 1' 
 
 [[on-window-detected]]
@@ -174,6 +158,9 @@ run = 'layout floating'
     if.app-id = 'com.insomnia.app'
     run = 'move-node-to-workspace 3' 
 
+[[on-window-detected]]
+    if.app-id = 'com.hnc.Discord'
+    run = 'move-node-to-workspace 4' 
 # default floating
 
 # 'main' binding mode declaration
@@ -231,8 +218,11 @@ run = 'layout floating'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-s = 'mode service'
+    alt-shift-m = 'mode monitor'
 
     #Apps 
+    alt-b = 'exec-and-forget open -a /Applications/Beekeeper Studio.app'
+    alt-w = 'exec-and-forget open -a /Applications/WhatsApp.app'
     alt-a = 'exec-and-forget open -a /Applications/Arc.app'
     alt-s = 'exec-and-forget open -a /Applications/Safari.app'
     alt-t = 'exec-and-forget open -a /Applications/Kitty.app'
@@ -257,7 +247,18 @@ run = 'layout floating'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
 
+[mode.monitor.binding]
+    m = ['focus-monitor up --wrap-around', 'mode main']
+    2 = ['focus-monitor down', 'mode main']
 
+    # h = 'focus-monitor left --wrap-around'
+    # j = 'focus-monitor down --wrap-around'
+    # k = 'focus-monitor up --wrap-around'
+    # l = 'focus-monitor right --wrap-around'
+    # p = 'focus-monitor prev --wrap-around'
+    # n = 'focus-monitor next --wrap-around'
+    
+    esc = ['reload-config', 'mode main']
 # [workspace-to-monitor-force-assignment]
 #
 #     1 = 'main'
