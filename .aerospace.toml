@@ -221,8 +221,9 @@ run = 'layout floating'
     alt-shift-m = 'mode monitor'
 
     #Apps 
-    alt-b = 'exec-and-forget open -a /Applications/Beekeeper Studio.app'
+    alt-b = 'exec-and-forget open -a /Applications/Beekeeper.app'
     alt-w = 'exec-and-forget open -a /Applications/WhatsApp.app'
+    alt-ctrl-f = 'exec-and-forget open -a /System/Library/CoreServices/Finder.app'
     alt-a = 'exec-and-forget open -a /Applications/Arc.app'
     alt-s = 'exec-and-forget open -a /Applications/Safari.app'
     alt-t = 'exec-and-forget open -a /Applications/Kitty.app'
