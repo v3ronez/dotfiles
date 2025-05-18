@@ -35,7 +35,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 300
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'accordion'
+default-root-container-layout = 'tiles'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -168,7 +168,7 @@ run = 'layout floating'
 
 [[on-window-detected]]
     if.app-id = 'net.whatsapp.WhatsApp'
-    run = 'move-node-to-workspace 9' 
+    run = 'move-node-to-workspace 0' 
 # default floating
 
 # 'main' binding mode declaration
@@ -209,6 +209,7 @@ run = 'layout floating'
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
+    alt-0 = 'workspace 0'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -220,6 +221,11 @@ run = 'layout floating'
     alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
     alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
     alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+    alt-shift-0 = 'move-node-to-workspace 0 --focus-follows-window'
+
+    # https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
+    alt-ctrl-m = 'move-node-to-monitor next --wrap-around --focus-follows-window'
+    alt-shift-m = ['focus-monitor up --wrap-around', 'mode main']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -228,7 +234,6 @@ run = 'layout floating'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-s = 'mode service'
-    alt-shift-m = 'mode monitor'
 
     #Apps 
     alt-b = 'exec-and-forget open -a /Applications/Beekeeper.app'
@@ -257,19 +262,19 @@ run = 'layout floating'
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
-
-[mode.monitor.binding]
-    m = ['focus-monitor up --wrap-around', 'mode main']
-    2 = ['focus-monitor down', 'mode main']
-
-    # h = 'focus-monitor left --wrap-around'
-    # j = 'focus-monitor down --wrap-around'
-    # k = 'focus-monitor up --wrap-around'
-    # l = 'focus-monitor right --wrap-around'
-    # p = 'focus-monitor prev --wrap-around'
-    # n = 'focus-monitor next --wrap-around'
-    
-    esc = ['reload-config', 'mode main']
+#
+# [mode.monitor.binding]
+#     m = ['focus-monitor up --wrap-around', 'mode main']
+#     2 = ['focus-monitor down', 'mode main']
+#
+#     # h = 'focus-monitor left --wrap-around'
+#     # j = 'focus-monitor down --wrap-around'
+#     # k = 'focus-monitor up --wrap-around'
+#     # l = 'focus-monitor right --wrap-around'
+#     # p = 'focus-monitor prev --wrap-around'
+#     # n = 'focus-monitor next --wrap-around'
+#
+#     esc = ['reload-config', 'mode main']
 # [workspace-to-monitor-force-assignment]
 #
 #     1 = 'main'
