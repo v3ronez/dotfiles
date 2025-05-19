@@ -125,9 +125,9 @@ run = 'layout floating'
 if.app-name-regex-substring = 'calculator'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'books'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'books'
+# run = 'layout floating'
 
 # auto move to workspace
 [[on-window-detected]]
@@ -176,8 +176,8 @@ run = 'layout floating'
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
-    alt-m = 'fullscreen'
-    alt-f = 'layout floating tiling'
+    alt-f = 'fullscreen'
+    alt-shift-f = 'layout floating tiling'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
