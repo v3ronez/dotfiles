@@ -135,10 +135,6 @@ run = 'layout floating'
     run = 'move-node-to-workspace 1' 
 
 [[on-window-detected]]
-    if.app-id = 'net.whatsapp.WhatsApp '
-    run = 'move-node-to-workspace 1' 
-
-[[on-window-detected]]
     if.app-id = 'company.thebrowser.Browser'
     run = 'move-node-to-workspace 1' 
 
@@ -155,7 +151,7 @@ run = 'layout floating'
     run = 'move-node-to-workspace 2' 
 
 [[on-window-detected]]
-    if.app-id = 'com.insomnia.app'
+    if.app-id = 'com.postmanlabs.mac'
     run = 'move-node-to-workspace 3' 
 
 [[on-window-detected]]
@@ -168,7 +164,7 @@ run = 'layout floating'
 
 [[on-window-detected]]
     if.app-id = 'net.whatsapp.WhatsApp'
-    run = 'move-node-to-workspace 0' 
+    run = 'move-node-to-workspace 9' 
 # default floating
 
 # 'main' binding mode declaration
@@ -209,7 +205,6 @@ run = 'layout floating'
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
     alt-9 = 'workspace 9'
-    alt-0 = 'workspace 0'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -221,7 +216,6 @@ run = 'layout floating'
     alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
     alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
     alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
-    alt-shift-0 = 'move-node-to-workspace 0 --focus-follows-window'
 
     # https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
     alt-ctrl-m = 'move-node-to-monitor next --wrap-around --focus-follows-window'
@@ -243,6 +237,7 @@ run = 'layout floating'
     alt-s = 'exec-and-forget open -a /Applications/Safari.app'
     alt-t = 'exec-and-forget open -a /Applications/Kitty.app'
     alt-d = 'exec-and-forget open -a /Applications/Discord.app'
+    alt-p = 'exec-and-forget open -a /Applications/Postman.app'
 
 # 'service' binding mode declaration.
 
