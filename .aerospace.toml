@@ -11,7 +11,7 @@ after-login-command = []
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 
 # after-startup-command = ['exec-and-forget brew services start sketchybar', 'exec-and-forget brew services start borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0']
-after-startup-command = ['exec-and-forget brew services start borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0']
+after-startup-command = ['exec-and-forget brew services start borders width=8.0 active_color=0xffe1e3e4 inactive_color=0xff494d64']
 
 # exec-on-workspace-change = ['/bin/bash', '-c',
 #   'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
@@ -19,7 +19,7 @@ after-startup-command = ['exec-and-forget brew services start borders active_col
 # ]
 
 exec-on-workspace-change = ['/bin/bash', '-c',
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+  'exec-and-forget borders width=8.0 active_color=0xffe1e3e4 inactive_color=0xff494d64'
 ]
 
 # Start AeroSpace at login
@@ -68,13 +68,13 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 0
-    inner.vertical =   0
-    outer.left =       0
+    inner.horizontal = 10
+    inner.vertical =   10
+    outer.left =       10
     outer.bottom =     0
-    # outer.top =        28
+    # outer.top =       28
     outer.top =        0
-    outer.right =      0
+    outer.right =      10
 
 # default floating
 [[on-window-detected]]
@@ -156,15 +156,15 @@ run = 'layout floating'
 
 [[on-window-detected]]
     if.app-id = 'com.hnc.Discord'
-    run = 'move-node-to-workspace 7' 
+    run = 'move-node-to-workspace 6' 
 
 [[on-window-detected]]
     if.app-id = 'io.beekeeperstudio.desktop'
-    run = 'move-node-to-workspace 8' 
+    run = 'move-node-to-workspace 7' 
 
 [[on-window-detected]]
     if.app-id = 'net.whatsapp.WhatsApp'
-    run = 'move-node-to-workspace 9' 
+    run = 'move-node-to-workspace 8' 
 # default floating
 
 # 'main' binding mode declaration
@@ -218,8 +218,6 @@ run = 'layout floating'
     alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
     # https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
-    alt-ctrl-m = 'move-node-to-monitor next --wrap-around --focus-follows-window'
-    alt-shift-m = ['focus-monitor up --wrap-around', 'mode main']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -228,6 +226,7 @@ run = 'layout floating'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-s = 'mode service'
+    alt-shift-m = 'mode monitor'
 
     #Apps 
     alt-b = 'exec-and-forget open -a /Applications/Beekeeper.app'
@@ -240,7 +239,6 @@ run = 'layout floating'
     alt-p = 'exec-and-forget open -a /Applications/Postman.app'
 
 # 'service' binding mode declaration.
-
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
@@ -257,19 +255,13 @@ run = 'layout floating'
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
-#
-# [mode.monitor.binding]
-#     m = ['focus-monitor up --wrap-around', 'mode main']
-#     2 = ['focus-monitor down', 'mode main']
-#
-#     # h = 'focus-monitor left --wrap-around'
-#     # j = 'focus-monitor down --wrap-around'
-#     # k = 'focus-monitor up --wrap-around'
-#     # l = 'focus-monitor right --wrap-around'
-#     # p = 'focus-monitor prev --wrap-around'
-#     # n = 'focus-monitor next --wrap-around'
-#
-#     esc = ['reload-config', 'mode main']
+
+[mode.monitor.binding]
+    n = ['move-node-to-monitor next --wrap-around --focus-follows-window', 'mode main']
+    w = ['move-workspace-to-monitor next --wrap-around', 'mode main']
+    m = ['focus-monitor up --wrap-around', 'mode main']
+
+    esc = ['reload-config', 'mode main']
 # [workspace-to-monitor-force-assignment]
 #
 #     1 = 'main'

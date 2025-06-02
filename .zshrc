@@ -117,6 +117,8 @@ alias bsre="brew services restart"
 alias bstop="brew services stop"
 alias gs="git status"
 alias takeout="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --add-host=host.docker.internal:host-gateway -it tighten/takeout:latest"
+alias amrf="php artisan migrate:refresh"
+alias amr="php artisan migrate:reset"
 
 ## end aliases
 
@@ -147,7 +149,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 #git
 function gpf() {
-  git add --all -p 
+  git add . -p 
   mensagem=$(IFS=' '; echo "$*")
   if [ -z "$mensagem" ]; then
     mensagem="wip"
@@ -159,7 +161,7 @@ function gpf() {
 }
 
 function gp() {
-  git add --all -p 
+  git add . -p 
   mensagem=$(IFS=' '; echo "$*")
   if [ -z "$mensagem" ]; then
     mensagem="wip"
@@ -171,7 +173,7 @@ function gp() {
 }
 
 function gpa() {
-  git add --all
+  git add .
   mensagem=$(IFS=' '; echo "$*")
   if [ -z "$mensagem" ]; then
     mensagem="wip"
