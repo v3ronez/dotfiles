@@ -35,7 +35,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 300
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -68,17 +68,20 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
-    outer.left =       10
-    outer.bottom =     0
-    # outer.top =       28
-    outer.top =        0
-    outer.right =      10
+    inner.horizontal = 15
+    inner.vertical =   15
+    outer.left =       0
+    outer.bottom =     5
+    outer.top =        5
+    outer.right =      0
 
 # default floating
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'player'
 run = 'layout floating'
 
 [[on-window-detected]]
@@ -196,6 +199,7 @@ run = 'layout floating'
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    alt-0 = 'workspace 0'
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
     alt-3 = 'workspace 3'
@@ -204,7 +208,6 @@ run = 'layout floating'
     alt-6 = 'workspace 6'
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
-    alt-9 = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -215,7 +218,8 @@ run = 'layout floating'
     alt-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
     alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
     alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
-    alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+    alt-shift-0 = 'move-node-to-workspace 0 --focus-follows-window'
+
 
     # https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
 
@@ -232,7 +236,6 @@ run = 'layout floating'
     alt-b = 'exec-and-forget open -a /Applications/Beekeeper.app'
     alt-w = 'exec-and-forget open -a /Applications/WhatsApp.app'
     alt-ctrl-f = 'exec-and-forget open -a /System/Library/CoreServices/Finder.app'
-    alt-a = 'exec-and-forget open -a /Applications/Arc.app'
     alt-s = 'exec-and-forget open -a /Applications/Safari.app'
     alt-t = 'exec-and-forget open -a /Applications/Kitty.app'
     alt-d = 'exec-and-forget open -a /Applications/Discord.app'
