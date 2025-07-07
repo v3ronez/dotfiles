@@ -38,7 +38,7 @@ MAILCHECK=0
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -183,5 +183,20 @@ function gpa() {
   echo "\t\nFazendo push para o branch: $current_branch\n"
   git push origin "$current_branch" -q
 }
+
+function gpp() {
+  git add .
+  mensagem=$(IFS=' '; echo "$*")
+  if [ -z "$mensagem" ]; then
+    mensagem="wip"
+  fi
+  current_branch=$(git branch --show-current)
+  commit_msg="[$current_branch] $mensagem"
+  git commit -m "$commit_msg"
+  echo "\n=== Fazendo push para o branch: $current_branch ===\n"
+  git push origin "$current_branch" -q
+}
 #end functions
 
+# Enable history in IEX through Erlang(OTP)
+export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_dir '\"$HOME/.erlang_history\"'"
