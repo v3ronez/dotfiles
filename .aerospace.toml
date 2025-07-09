@@ -1,5 +1,5 @@
 # Place a copy of this config to ~/.aerospace.toml
-# After that, you can edit ~/.aerospace.toml to your liking
+# After that, you can edit ~/.aerospace.toml to your liking.
 
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
@@ -35,7 +35,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 300
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'accordion'
+default-root-container-layout = 'tiles'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -68,12 +68,12 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 15
-    inner.vertical =   15
-    outer.left =       0
+    inner.horizontal = 0
+    inner.vertical =   0
+    outer.left =       4
     outer.bottom =     5
-    outer.top =        5
-    outer.right =      0
+    outer.top =        2
+    outer.right =      4
 
 # default floating
 [[on-window-detected]]

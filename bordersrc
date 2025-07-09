@@ -1,0 +1,12 @@
+#!/bin/sh
+options=(
+	style=round
+	width=6.0
+	hidpi=on
+	# active_color=0xFFFFFFFF
+	# active_color=0xFF0482FF
+	active_color=0xFF00D0FF
+	inactive_color=0xff414550
+)
+
+borders "${options[@]}"
