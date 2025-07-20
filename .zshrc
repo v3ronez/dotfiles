@@ -7,7 +7,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="norm"
+# ZSH_THEME="norm"
+ZSH_THEME="jtriley"
 
 MAILCHECK=0
 # Set list of themes to pick from when loading at random
@@ -102,6 +103,11 @@ fi
 
 ## aliases
 alias :q="exit"
+alias cc="cargo check"
+alias cr="cargo run"
+alias cb="cargo build"
+alias cl="cargo clippy"
+alias v="nvim"
 alias vim="nvim"
 alias a="php artisan"
 alias pp="pnpm"
