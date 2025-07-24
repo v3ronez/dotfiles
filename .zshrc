@@ -103,10 +103,10 @@ fi
 
 ## aliases
 alias :q="exit"
-alias cc="cargo check"
+alias cc="clear && cargo check"
 alias cr="cargo run"
 alias cb="cargo build"
-alias cl="cargo clippy"
+alias cl="clear && cargo clippy"
 alias v="nvim"
 alias vim="nvim"
 alias a="php artisan"
