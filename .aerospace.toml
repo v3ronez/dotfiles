@@ -11,16 +11,19 @@ after-login-command = []
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 
 # after-startup-command = ['exec-and-forget brew services start sketchybar', 'exec-and-forget brew services start borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0']
-after-startup-command = ['exec-and-forget brew services start borders width=8.0 active_color=0xffe1e3e4 inactive_color=0xff494d64']
+# after-startup-command = ['exec-and-forget brew services start borders width=8.0 active_color=0xffe1e3e4 inactive_color=0xff494d64']
+after-startup-command = []
 
 # exec-on-workspace-change = ['/bin/bash', '-c',
 #   'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 #   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
 # ]
 
-exec-on-workspace-change = ['/bin/bash', '-c',
-  'exec-and-forget borders width=8.0 active_color=0xffe1e3e4 inactive_color=0xff494d64'
-]
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#   'exec-and-forget borders width=8.0 active_color=0xffe1e3e4 inactive_color=0xff494d64'
+# ]
+
+exec-on-workspace-change = []
 
 # Start AeroSpace at login
 start-at-login = true 
@@ -70,10 +73,10 @@ automatically-unhide-macos-hidden-apps = false
 [gaps]
     inner.horizontal = 0
     inner.vertical =   0
-    outer.left =       3
-    outer.bottom =     5
-    outer.top =        2
-    outer.right =      3
+    outer.left =       0 #3
+    outer.bottom =     0 #5
+    outer.top =        0 #2
+    outer.right =      0 #3
 
 # default floating
 [[on-window-detected]]
@@ -231,7 +234,6 @@ run = 'layout floating'
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-    # alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-s = 'mode service'
@@ -267,7 +269,7 @@ run = 'layout floating'
 
 [mode.monitor.binding]
     n = ['move-node-to-monitor next --wrap-around --focus-follows-window', 'mode main']
-    # w = ['move-workspace-to-monitor next --wrap-around', 'mode main']
+    w = ['move-workspace-to-monitor --wrap-around next']
     m = ['focus-monitor next --wrap-around', 'mode main']
 
     1 = ['move-node-to-workspace 1 --focus-follows-window', 'mode main']
@@ -281,13 +283,13 @@ run = 'layout floating'
     9 = ['move-node-to-workspace 9 --focus-follows-window', 'mode main']
     esc = ['reload-config', 'mode main']
 
-[workspace-to-monitor-force-assignment]
-    1 = 'main'
-    2 = 'main'
-    3 = 'main'
-    4 = 'main'
-    5 = 'main'
-    6 = ['secondary', 'main']
-    7 = ['secondary', 'main']
-    8 = ['secondary', 'main']
-    9 = ['secondary', 'main']
+# [workspace-to-monitor-force-assignment]
+#     1 = 'main'
+#     2 = 'main'
+#     3 = 'main'
+#     4 = 'main'
+#     5 = 'main'
+#     6 = ['secondary', 'main']
+#     7 = ['secondary', 'main']
+#     8 = ['secondary', 'main']
+#     9 = ['secondary', 'main']
