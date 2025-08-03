@@ -269,7 +269,7 @@ run = 'layout floating'
 
 [mode.monitor.binding]
     n = ['move-node-to-monitor next --wrap-around --focus-follows-window', 'mode main']
-    w = ['move-workspace-to-monitor --wrap-around next']
+    w = ['move-workspace-to-monitor --wrap-around next','mode main']
     m = ['focus-monitor next --wrap-around', 'mode main']
 
     1 = ['move-node-to-workspace 1 --focus-follows-window', 'mode main']
@@ -281,6 +281,7 @@ run = 'layout floating'
     7 = ['move-node-to-workspace 7 --focus-follows-window', 'mode main']
     8 = ['move-node-to-workspace 8 --focus-follows-window', 'mode main']
     9 = ['move-node-to-workspace 9 --focus-follows-window', 'mode main']
+
     esc = ['reload-config', 'mode main']
 
 # [workspace-to-monitor-force-assignment]
