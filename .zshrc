@@ -72,7 +72,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,6 +103,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ## aliases
+alias dc="docker compose"
+alias d="docker"
 alias :q="exit"
 alias cc="clear && cargo check"
 alias ct="clear && cargo test"
@@ -134,9 +136,6 @@ alias amr="php artisan migrate:reset"
 #PATH VSCODE
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-
-#composer
-export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # go path
 export PATH="$PATH:$HOME/go/bin"
@@ -206,6 +205,4 @@ function gpp() {
   git push origin "$current_branch" -q
 }
 #end functions
-
-# Enable history in IEX through Erlang(OTP)
-export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_dir '\"$HOME/.erlang_history\"'"
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"

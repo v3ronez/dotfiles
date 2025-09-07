@@ -137,6 +137,10 @@ run = 'layout floating'
 
 # auto move to workspace
 [[on-window-detected]]
+    if.app-id = 'org.mozilla.firefoxdeveloperedition'
+    run = 'move-node-to-workspace 1' 
+
+[[on-window-detected]]
     if.app-id = 'com.apple.Safari'
     run = 'move-node-to-workspace 1' 
 
@@ -240,10 +244,10 @@ run = 'layout floating'
     alt-m = 'mode monitor'
 
     #Apps 
-    alt-b = 'exec-and-forget open -a /Applications/Beekeeper.app'
+    alt-b = 'exec-and-forget open -a /Applications/Beekeeper\ Studio.app'
     alt-w = 'exec-and-forget open -a /Applications/WhatsApp.app'
     alt-ctrl-f = 'exec-and-forget open -a /System/Library/CoreServices/Finder.app'
-    alt-s = 'exec-and-forget open -a /Applications/Vivaldi.app'
+    alt-s = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
     alt-t = 'exec-and-forget open -a /Applications/Kitty.app'
     alt-d = 'exec-and-forget open -a /Applications/Discord.app'
     alt-p = 'exec-and-forget open -a /Applications/Postman.app'
