@@ -72,7 +72,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting docker)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -206,3 +206,6 @@ function gpp() {
 }
 #end functions
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+
+#docker
+source <(docker completion zsh)
