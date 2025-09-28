@@ -87,7 +87,7 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -209,3 +209,12 @@ export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
 #docker
 source <(docker completion zsh)
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/veronez/.opam/opam-init/init.zsh' ]] || source '/Users/veronez/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
