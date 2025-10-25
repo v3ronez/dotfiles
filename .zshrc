@@ -103,15 +103,19 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ## aliases
+alias rld="source $HOME/.zshrc"
 alias dc="docker compose"
+alias dcu="dc up -d"
+alias dcd="dc down"
+alias dce="dc exec"
 alias d="docker"
 alias :q="exit"
-alias cc="clear && cargo check"
-alias ct="clear && cargo test"
-alias cr="clear && cargo run"
-alias cb="clear && cargo build"
-alias cl="clear && cargo clippy"
-alias ca="clear && cargo watch -x check"
+alias cc="cargo check"
+alias ct="cargo test"
+alias cr="cargo run"
+alias cb="cargo build"
+alias cl="cargo clippy"
+alias ca="cargo watch -x check"
 alias v="nvim"
 alias vim="nvim"
 alias a="php artisan"
@@ -130,6 +134,8 @@ alias gs="git status"
 alias takeout="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock --add-host=host.docker.internal:host-gateway -it tighten/takeout:latest"
 alias amrf="php artisan migrate:refresh"
 alias amr="php artisan migrate:reset"
+alias gpo="git pull origin"
+alias to="toggle_audio_output"
 
 ## end aliases
 
@@ -203,6 +209,24 @@ function gpp() {
   git commit -m "$commit_msg"
   echo "\n=== Fazendo push para o branch: $current_branch ===\n"
   git push origin "$current_branch" -q
+}
+
+function toggle_audio_output() {
+  # check if the command exists
+  if ! SwitchAudioSource -a > /dev/null 2>&1
+  then
+    echo "SwitchAudioSource command not found. Installing switchaudio-osx..."
+    brew install switchaudio-osx > /dev/null 2>&1
+    echo "SwitchAudioSource command installed."
+  fi
+
+  # Change the audio device
+  current_device=$(SwitchAudioSource -c)
+  if [ "$current_device" = "External Headphones" ]; then
+    SwitchAudioSource -s "Mac mini Speakers" > /dev/null 2>&1
+  else
+    SwitchAudioSource -s "External Headphones" > /dev/null 2>&1
+  fi
 }
 #end functions
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"

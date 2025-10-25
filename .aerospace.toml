@@ -84,6 +84,10 @@ if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Riot Client'
+run = 'layout floating'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'player'
 run = 'layout floating'
 
@@ -251,9 +255,9 @@ run = 'layout floating'
     alt-b = 'exec-and-forget open -a /Applications/Beekeeper\ Studio.app'
     alt-w = 'exec-and-forget open -a /Applications/WhatsApp.app'
     alt-ctrl-f = 'exec-and-forget open -a /System/Library/CoreServices/Finder.app'
-    # alt-s = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
+    alt-s = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
     # alt-s = 'exec-and-forget open -a /Applications/Orion.app'
-    alt-s = 'exec-and-forget open -a /Applications/Safari.app'
+    # alt-s = 'exec-and-forget open -a /Applications/Safari.app'
     alt-t = 'exec-and-forget open -a /Applications/Kitty.app'
     alt-d = 'exec-and-forget open -a /Applications/Discord.app'
     alt-p = 'exec-and-forget open -a /Applications/Postman.app'
